@@ -5,6 +5,7 @@ figure {
 	
 #caesar-img {
 	width: 100%;
+	margin-bottom: -2px;
 }
 
 
@@ -26,6 +27,7 @@ h1 {
 
 	list-style:none;	
 	list-style-position: inside;
+	margin-top: 3px;
 }
 
 .puzzle-piece {
@@ -104,8 +106,11 @@ img {
 #facts-ol{
 	padding-right: 30px;
 	padding-left: 30px;
-	margin-bottom: 0;
+	margin-bottom: -2px;
+	margin-top: 0px;
 }
+
+
 
 .fa-info-circle {
 	display: inline;
@@ -124,8 +129,13 @@ img {
 	display: none;
 	padding: 10px;
 	background-color: #9c9c9c;
-	margin-bottom: 3px;
+	margin-bottom: 0px;
 	margin-top: 3px;
 	color: white;
 	line-height: 1.25em;
+}
+
+#p-help {
+	padding-bottom: 4px;
+
 }
