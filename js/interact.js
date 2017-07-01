@@ -7,13 +7,13 @@ $(document).ready(function () {
 		$(".fa-info-circle").on('click', function() {
 			console.log("yee");
 			if (invisible == true) {
-				console.log("yete");
+				
 				$("#help").css("display","block");
 				invisible = false;
 			}
 			else if (invisible == false){
 				$("#help").css("display","none");
-				console.log("yete");
+				
 				invisible = true;
 			}
 		});
@@ -25,11 +25,23 @@ $(document).ready(function () {
 	  		
 	  		if (invisible == true) {
 	  			var x = 1;
-	  			function myFunction(int) {
-
-	  				$("#li-"+ int).css("display","block");
+	  			
+	  			var mq = window.matchMedia( "(min-width: 600px)" );
+				if (mq.matches) {
 	  				
-	  			};
+	  				//$("#p-help").html("");
+	  				function myFunction(int) {
+		  				var grrr = $("#li-"+ int).css("display","block");
+		  				$("#p-help").append(grrr);	
+		  				 				
+	  				};
+	  			} else {
+		  			function myFunction(int) {
+		  				$("#li-"+ int).css("display","block");
+
+		  			
+	  				};
+	  			}
 	  			var start = null;
 
 	  			function step(timestamp) {
@@ -49,26 +61,37 @@ $(document).ready(function () {
 	  		}
 	  		else if (invisible == false){
 	  			var x = 10;
-	  			function my_Function(int) {
+	  			var mq = window.matchMedia( "(min-width: 600px)" );
+				if (mq.matches) {
 
-	  				$("#li-"+ int).css("display","none");
-	  			};
+		  			function my_Function(int) {
+		  				var grrr = $("#li-"+ int).css("display","none");
+		  				$("#p-help").append(grrr);
+		  				
+		  			};
+		  		}else {
+		  			function my_Function(int) {
+		  			$("#li-"+ int).css("display","none");
+		  		};
+		  	}
 
-	  			var start = null;
+		  			var start = null;
 
-	  			function backStep(timestamp) {
-				  if (!start) start = timestamp;
-				  var progress = timestamp - start;
-				  my_Function(x);
-				  if (x >= 0) {
-				  	x--;
-				    window.requestAnimationFrame(backStep);
-				  }
-				}
-	  			
-	  			window.requestAnimationFrame(backStep);
+		  			function backStep(timestamp) {
+					  if (!start) start = timestamp;
+					  var progress = timestamp - start;
+					  my_Function(x);
+					  if (x >= 0) {
+					  	x--;
+					    window.requestAnimationFrame(backStep);
+					  }
+					}
+		  			
+		  			window.requestAnimationFrame(backStep);
 
-	  			invisible = true;
+		  			invisible = true;
+		  		
+
 	  		}
 	  	});
 

@@ -23,15 +23,17 @@ h1 {
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: row;
-	justify-content: space-between;
+
+	/* justify-content: space-between; */
 
 	list-style:none;	
 	list-style-position: inside;
 	margin-top: 3px;
+
 }
 
 .puzzle-piece {
-	width: 49.4%;
+	width: 49%;
 	margin: 1px;
 	box-sizing: border-box;
 	padding: 15px;
@@ -39,6 +41,7 @@ h1 {
 	color: white;
 	height: 150px;
 	font-size: 20px;
+	flex-grow: 1;
 }
 
 .selected, .puzzle-piece:hover {
@@ -55,7 +58,7 @@ margin-right: -.5px; */
 	/* border: solid rgba(0, 0, 255, 0.03); */
 	
 	/* box-sizing: content-box; */
-	flex-grow: 3; 
+	
 }
 
 .puzzle-piece:visited {
@@ -136,6 +139,70 @@ img {
 }
 
 #p-help {
-	padding-bottom: 4px;
+	padding-bottom: 6px;
+
 
 }
+
+@media screen and (min-width: 600px) {
+	#flex-cont-bigger {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row;
+
+	}
+	#puzzle-container {
+		flex-grow: 1;
+		width: 60%;
+		order: 0;
+		height: 33.3%;
+		
+	}
+	#help {
+		display: block;
+		
+		width: 35%;
+		order:0;
+		margin-right: 2px;
+
+		height: 435px;
+		overflow: auto
+
+		
+		
+		
+	}
+	#info-circ-id, .fa-info-circle:before {
+	display: none;
+	overflow:auto;
+	}
+
+	#info {
+		order:1;
+		max-width: 30%;
+		display: block;
+		flex-grow: 1;
+		overflow: auto;
+
+			
+	}
+
+	#li-1, #li-2, #li-3, #li-4, #li-5,#li-6,#li-7,#li-8,#li-9,#li-10 {
+		display: none;
+
+
+	}
+
+
+}
+
+@media screen and (min-width: 850px) {
+	body {
+		max-width: 850px;
+		margin:auto;
+
+	}
+
+	#li-1 {
+		margin-top:10px;
+	}
